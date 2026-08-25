@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Proyecto · Ejemplo</title>
+
+    <!-- Estilos básicos en línea para mantenerlo todo en un solo archivo -->
+    <style>
+        /* Reset y configuración base */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f8fafc;
+            color: #0f172a;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Contenedor principal */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            flex: 1;
+        }
+
+        /* Encabezado */
+        header {
+            text-align: center;
+            padding: 2rem 0 1.5rem;
+            border-bottom: 2px solid #e2e8f0;
+            margin-bottom: 2.5rem;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #475569;
+            margin-top: 0.25rem;
+        }
+
+        /* Tarjeta principal */
+        .card {
+            background: #ffffff;
+            border-radius: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            padding: 2.5rem 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid #eef2f6;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .card h2 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: #0f172a;
+        }
+
+        .card h2 .badge {
+            font-size: 0.8rem;
+            font-weight: 500;
+            background: #dbeafe;
+            color: #1d4ed8;
+            padding: 0.2rem 0.8rem;
+            border-radius: 999px;
+            margin-left: 0.5rem;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .card p {
+            color: #334155;
+            margin-bottom: 1rem;
+        }
+
+        .card ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 0.5rem;
+        }
+
+        .card ul li {
+            padding: 0.5rem 0 0.5rem 1.8rem;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%232563eb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>') left center no-repeat;
+            background-size: 1.2rem;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .card ul li:last-child {
+            border-bottom: none;
+        }
+
+        /* Botón */
+        .btn {
+            display: inline-block;
+            background: #2563eb;
+            color: #fff;
+            font-weight: 500;
+            padding: 0.7rem 2rem;
+            border-radius: 999px;
+            text-decoration: none;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+        }
+
+        .btn:hover {
+            background: #1d4ed8;
+            transform: translateY(-1px);
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #2563eb;
+            box-shadow: inset 0 0 0 2px #2563eb;
+        }
+
+        .btn-outline:hover {
+            background: #2563eb;
+            color: #fff;
+        }
+
+        .flex {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        /* Pie de página */
+        footer {
+            text-align: center;
+            padding: 2rem 0 1.5rem;
+            border-top: 1px solid #e2e8f0;
+            margin-top: auto;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 1rem;
+            }
+
+            header h1 {
+                font-size: 2.2rem;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+
+            .flex {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Encabezado -->
+        <header>
+            <h1>🚀 Mi Proyecto</h1>
+            <p>Un ejemplo simple para tu repositorio Git</p>
+        </header>
+
+        <!-- Tarjeta principal -->
+        <main>
+            <div class="card">
+                <h2>
+                    ¡Hola, mundo!
+                    <span class="badge">v1.0</span>
+                </h2>
+
+                <p>
+                    Esta es una página HTML de ejemplo, creada como punto de partida
+                    para tu proyecto. Puedes modificarla, ampliarla o usarla como
+                    base para tus experimentos.
+                </p>
+
+                <ul>
+                    <li><strong>HTML5</strong> semántico y accesible</li>
+                    <li><strong>CSS</strong> moderno con variables y flexbox</li>
+                    <li><strong>Responsive</strong> — se ve bien en móvil y escritorio</li>
+                    <li>Totalmente <strong>autocontenido</strong> en un solo archivo</li>
+                </ul>
+
+                <div class="flex">
+                    <a href="#" class="btn">Ver más</a>
+                    <a href="#" class="btn btn-outline">Documentación</a>
+                </div>
+            </div>
+
+            <!-- Segunda tarjeta (extra) -->
+            <div class="card">
+                <h2>📁 Estructura sugerida</h2>
+                <p>
+                    Para proyectos más grandes, considera organizar tus archivos así:
+                </p>
+                <ul>
+                    <li><code>index.html</code> — esta página</li>
+                    <li><code>css/</code> — estilos separados</li>
+                    <li><code>js/</code> — scripts</li>
+                    <li><code>assets/</code> — imágenes, fuentes, etc.</li>
+                </ul>
+                <p style="margin-top:0.75rem; font-size:0.95rem; color:#64748b;">
+                    ✨ Recuerda: un buen <code>README.md</code> hace que tu repo
+                    sea más fácil de entender.
+                </p>
+            </div>
+        </main>
+
+        <!-- Pie de página -->
+        <footer>
+            <p>
+                Hecho con ❤️ &middot;
+                <a href="#" target="_blank">GitHub</a> &middot;
+                <span id="year"></span>
+            </p>
+        </footer>
+
+    </div>
+
+    <!-- Un pequeño script para el año dinámico -->
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
